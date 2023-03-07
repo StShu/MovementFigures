@@ -16,5 +16,9 @@ namespace MovementFigures
         {
             graphics.FillRectangle(brushes, rectangle);
         }
+        public override void ToggleDirect()
+        {
+            SetDirect(this.Direct == Directs.RIGHT ? Directs.LEFT : Directs.RIGHT);
+        }
     }
 }

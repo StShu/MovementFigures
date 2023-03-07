@@ -16,5 +16,9 @@ namespace MovementFigures
         {
             graphics.FillEllipse(brushes, rectangle);
         }
+        public override void ToggleDirect()
+        {
+            SetDirect(this.Direct == Directs.UP ? Directs.DOWN : Directs.UP);
+        }
     }
 }

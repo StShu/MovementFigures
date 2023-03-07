@@ -40,29 +40,6 @@ namespace MovementFigures
             this.rectangle = new System.Drawing.Rectangle(x, y, width, height);
         }
 
-        public void ChangedStepX()
-        {
-            switch (Direct)
-            {
-                case Directs.LEFT: x -= stepMove;
-                    rectangle.Offset(-stepMove,0); 
-                    break;
-                case Directs.RIGHT: x += stepMove; 
-                    rectangle.Offset(+stepMove, 0);
-                    break;
-            }
-            
-        }
-        public void ChangedStepY()
-        {
-            switch (Direct)
-            {
-                case Directs.UP: y -= stepMove; break;
-                case Directs.DOWN: y += stepMove; break;
-            }
-            rectangle.Y = y;
-        }
-
         public void SetDirect(Directs direct)
         {   
             this.Direct = direct;
@@ -78,10 +55,10 @@ namespace MovementFigures
             switch (Direct)
             {
                 case Directs.UP:
-                    this.rectangle.Offset(-stepMove, y);
+                    this.rectangle.Offset(0,-stepMove);
                     break;
                 case Directs.DOWN:
-                    this.rectangle.Offset(+stepMove, y);
+                    this.rectangle.Offset(0, +stepMove);
                     break;
                 case Directs.LEFT:
                     this.rectangle.Offset(-stepMove, 0);
@@ -93,5 +70,6 @@ namespace MovementFigures
         }
 
         public abstract void Draw(Graphics graphics);
+        public abstract void ToggleDirect();
     }
 }
