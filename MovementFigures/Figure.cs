@@ -56,15 +56,19 @@ namespace MovementFigures
             {
                 case Directs.UP:
                     this.rectangle.Offset(0,-stepMove);
+                    y -= stepMove;
                     break;
                 case Directs.DOWN:
                     this.rectangle.Offset(0, +stepMove);
+                    y += stepMove;
                     break;
                 case Directs.LEFT:
                     this.rectangle.Offset(-stepMove, 0);
+                    x -= stepMove;
                     break;
                 case Directs.RIGHT:
                     this.rectangle.Offset(+stepMove, 0);
+                    x += stepMove;
                     break;
             }
         }
