@@ -25,18 +25,18 @@ namespace MovementFigures
         {
             if (figure is Rectangle)
             {
-                if (figure.x <= pictureBox1.Width - figure.Width && figure.Direct == Figure.Directs.RIGHT)
+                if (figure.rectangle.X <= pictureBox1.Width - figure.Width && figure.Direct == Figure.Directs.RIGHT)
                     return;
-                if (figure.x >=0 && figure.Direct == Figure.Directs.LEFT)
+                if (figure.rectangle.X >= figure.rectangle.Width && figure.Direct == Figure.Directs.LEFT)
                     return;
             }
 
 
             if (figure is Сircle)
             {
-                if (figure.y <= pictureBox1.Height - figure.Height && figure.Direct == Figure.Directs.DOWN)
+                if (figure.rectangle.Y <= pictureBox1.Height - figure.Height && figure.Direct == Figure.Directs.DOWN)
                     return;
-                if (figure.y >= 0 && figure.Direct == Figure.Directs.UP)
+                if (figure.rectangle.Y >= figure.rectangle.Height && figure.Direct == Figure.Directs.UP)
                     return;
             }
 
@@ -45,28 +45,31 @@ namespace MovementFigures
             figure.ToggleDirect();
         }
 
-        private void pictureBox1_Click(object sender, EventArgs e)
+        private void timer1_Tick(object sender, EventArgs e)
         {
-            Graphics graphics = this.pictureBox1.CreateGraphics();
-
-            FiguresList.Add(new MovementFigures.Rectangle(1, 300, 50, 50, 32, Figure.Directs.RIGHT, Brushes.Red));
-            FiguresList.Add(new MovementFigures.Rectangle(300, pictureBox1.Height / 2, 50, 50, 32, Figure.Directs.LEFT, Brushes.Black));
-            FiguresList.Add(new MovementFigures.Сircle(300, 50, 50, 50, 32, Figure.Directs.DOWN, Brushes.Yellow));
-            FiguresList.Add(new MovementFigures.Сircle(300, 300, 50, 50, 32, Figure.Directs.UP, Brushes.Green));
-
-            var i = FiguresList[1].GetType();
-            while (true)
+            foreach (var figure in FiguresList)
             {
-                graphics.Clear(Color.White);
-                foreach (var figure in FiguresList)
-                {
-                    CheckedBorder(figure);
-                    figure.Move();
-                    figure.Draw(graphics);
-                }
-                Thread.Sleep(50);
-
+                CheckedBorder(figure);
+                figure.Move();
             }
+
+            timer1.Interval = 100;
+            Invalidate();
+        }
+      
+        private void Form1_Paint(object sender, PaintEventArgs e)
+        {
+            foreach (var figure in FiguresList)
+                figure.Draw(e.Graphics);
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+            FiguresList.Add(new MovementFigures.Rectangle(1, base.Width / 2, 50, 50, 32, Figure.Directs.RIGHT, Brushes.Red));
+            FiguresList.Add(new MovementFigures.Rectangle(base.Width - 51, base.Height / 2, 50, 50, 32, Figure.Directs.LEFT, Brushes.Black));
+            FiguresList.Add(new MovementFigures.Сircle(base.Width / 2, 50, 50, 50, 32, Figure.Directs.DOWN, Brushes.Yellow));
+            FiguresList.Add(new MovementFigures.Сircle(base.Width / 2, base.Height - 50, 50, 50, 32, Figure.Directs.UP, Brushes.Green));
+
         }
     }
 }
