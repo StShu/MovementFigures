@@ -10,7 +10,7 @@ namespace MovementFigures
 {
     internal class Сircle: Figure
     {
-        public Сircle(int x, int y, int width, int height, int stepMove, Directs directs, Brush brushes) : base(x, y, width, height, stepMove, directs, brushes) { }
+        public Сircle(int x, int y, int width, int height, int stepMove, Directs directs, Brush brushes, int id) : base(x, y, width, height, stepMove, directs, brushes, id) { }
 
         public override void Draw(Graphics graphics)
         {

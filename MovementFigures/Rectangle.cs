@@ -10,7 +10,7 @@ namespace MovementFigures
 {
     internal class Rectangle : Figure
     {
-        public Rectangle(int x, int y, int width, int height, int stepMove, Directs direct, Brush brushes) : base(x, y, width, height, stepMove, direct, brushes) {}
+        public Rectangle(int x, int y, int width, int height, int stepMove, Directs direct, Brush brushes, int id) : base(x, y, width, height, stepMove, direct, brushes,id) {}
 
         public override void Draw(Graphics graphics)
         {

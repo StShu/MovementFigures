@@ -5,6 +5,8 @@ VisualStudioVersion = 17.5.33414.496
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MovementFigures", "MovementFigures\MovementFigures.csproj", "{2E0E5B11-FB38-4C20-B9BB-FE3F6C3E99D6}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CommandLine", "CommandLine\CommandLine.csproj", "{00D9CA6F-FBE9-4817-BAAA-617E6672CD53}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{2E0E5B11-FB38-4C20-B9BB-FE3F6C3E99D6}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2E0E5B11-FB38-4C20-B9BB-FE3F6C3E99D6}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2E0E5B11-FB38-4C20-B9BB-FE3F6C3E99D6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{00D9CA6F-FBE9-4817-BAAA-617E6672CD53}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{00D9CA6F-FBE9-4817-BAAA-617E6672CD53}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{00D9CA6F-FBE9-4817-BAAA-617E6672CD53}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{00D9CA6F-FBE9-4817-BAAA-617E6672CD53}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
